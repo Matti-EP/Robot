@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220804 16:01:39.644" rpa="false" schemaversion="3">
+<suite id="s1" name="App" source="C:\Users\matti-esko.pelkola\OneDrive - Accenture\Desktop\Test_app\Test_assignment\app.robot">
+<test id="s1-t1" name="Open browser and reach website" line="12">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220804 16:01:39.844" level="INFO">Opening browser 'chrome' to base url 'https://www.alza.cz/EN/'.</msg>
+<status status="PASS" starttime="20220804 16:01:39.844" endtime="20220804 16:01:44.590"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220804 16:01:44.591" endtime="20220804 16:01:44.756"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220804 16:01:46.768" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220804 16:01:44.757" endtime="20220804 16:01:46.768"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@class="btnx cookies-info__button js-cookies-info-accept"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 16:01:46.770" level="INFO">Clicking element '//a[@class="btnx cookies-info__button js-cookies-info-accept"]'.</msg>
+<status status="PASS" starttime="20220804 16:01:46.769" endtime="20220804 16:01:47.495"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220804 16:01:49.507" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220804 16:01:47.496" endtime="20220804 16:01:49.507"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@id="left"]/ul/li/a[@href="/EN/computers-and-laptops"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 16:01:49.508" level="INFO">Clicking element '//div[@id="left"]/ul/li/a[@href="/EN/computers-and-laptops"]'.</msg>
+<status status="PASS" starttime="20220804 16:01:49.508" endtime="20220804 16:01:50.399"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@class="category-tiles__tile"][1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 16:01:50.400" level="INFO">Clicking element '//a[@class="category-tiles__tile"][1]'.</msg>
+<status status="PASS" starttime="20220804 16:01:50.400" endtime="20220804 16:01:53.124"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220804 16:01:55.136" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220804 16:01:53.125" endtime="20220804 16:01:55.136"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@id='tabs']/ul/li[@aria-controls="cenadesc"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 16:01:55.137" level="INFO">Clicking element '//div[@id='tabs']/ul/li[@aria-controls="cenadesc"]'.</msg>
+<status status="PASS" starttime="20220804 16:01:55.137" endtime="20220804 16:01:55.298"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220804 16:01:57.302" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220804 16:01:55.300" endtime="20220804 16:01:57.302"/>
+</kw>
+<status status="PASS" starttime="20220804 16:01:39.840" endtime="20220804 16:01:57.303"/>
+</test>
+<test id="s1-t2" name="Collect data for verification and convert" line="24">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${TEXTA}</var>
+<arg>//div[@id='boxc']/div/div[1]/div[@class="bottom"]/div[@class="price"]/div/div/div/span</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220804 16:01:57.389" level="INFO">${TEXTA} = 180 090,-</msg>
+<status status="PASS" starttime="20220804 16:01:57.304" endtime="20220804 16:01:57.389"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${TEXTB}</var>
+<arg>//div[@id='boxc']/div/div[2]/div[@class="bottom"]/div/div/div/div/span/span</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220804 16:01:57.439" level="INFO">${TEXTB} = 179 990,-</msg>
+<status status="PASS" starttime="20220804 16:01:57.389" endtime="20220804 16:01:57.439"/>
+</kw>
+<kw name="Fetch From Left" library="String">
+<var>${TEXT}</var>
+<arg>${TEXTA}</arg>
+<arg>,-</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<msg timestamp="20220804 16:01:57.440" level="INFO">${TEXT} = 180 090</msg>
+<status status="PASS" starttime="20220804 16:01:57.440" endtime="20220804 16:01:57.440"/>
+</kw>
+<kw name="Fetch From Left" library="String">
+<var>${TEXT1}</var>
+<arg>${TEXTB}</arg>
+<arg>,-</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<msg timestamp="20220804 16:01:57.441" level="INFO">${TEXT1} = 179 990</msg>
+<status status="PASS" starttime="20220804 16:01:57.441" endtime="20220804 16:01:57.441"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${NUMBER1}</var>
+<arg>${TEXT}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20220804 16:01:57.441" level="INFO">${NUMBER1} = 180090.0</msg>
+<status status="PASS" starttime="20220804 16:01:57.441" endtime="20220804 16:01:57.442"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${NUMBER2}</var>
+<arg>${TEXT1}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20220804 16:01:57.442" level="INFO">${NUMBER2} = 179990.0</msg>
+<status status="PASS" starttime="20220804 16:01:57.442" endtime="20220804 16:01:57.442"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${NUMBER1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220804 16:01:57.443" level="INFO">${NUMBER1} = 180090.0</msg>
+<status status="PASS" starttime="20220804 16:01:57.442" endtime="20220804 16:01:57.443"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${NUMBER2}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220804 16:01:57.443" level="INFO">${NUMBER2} = 179990.0</msg>
+<status status="PASS" starttime="20220804 16:01:57.443" endtime="20220804 16:01:57.443"/>
+</kw>
+<status status="PASS" starttime="20220804 16:01:57.304" endtime="20220804 16:01:57.444"/>
+</test>
+<test id="s1-t3" name="Add two most expensive products into the basket" line="34">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@id='boxc']/div/div[1]/div[@class="bottom"]/div/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 16:01:57.446" level="INFO">Clicking element '//div[@id='boxc']/div/div[1]/div[@class="bottom"]/div/span'.</msg>
+<status status="PASS" starttime="20220804 16:01:57.446" endtime="20220804 16:01:57.593"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220804 16:01:59.597" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220804 16:01:57.594" endtime="20220804 16:01:59.597"/>
+</kw>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20220804 16:01:59.598" endtime="20220804 16:02:01.657"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220804 16:02:03.660" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220804 16:02:01.657" endtime="20220804 16:02:03.660"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@id='boxc']/div/div[2]/div[@class="bottom"]/div/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 16:02:03.662" level="INFO">Clicking element '//div[@id='boxc']/div/div[2]/div[@class="bottom"]/div/span'.</msg>
+<status status="PASS" starttime="20220804 16:02:03.661" endtime="20220804 16:02:03.784"/>
+</kw>
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20220804 16:02:03.785" endtime="20220804 16:02:03.825"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220804 16:02:05.837" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220804 16:02:03.826" endtime="20220804 16:02:05.838"/>
+</kw>
+<status status="PASS" starttime="20220804 16:01:57.445" endtime="20220804 16:02:05.838"/>
+</test>
+<test id="s1-t4" name="Navigate to Shopping cart and collect grand total" line="43">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@id='top1']/div[@class='headericonsc']/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220804 16:02:05.840" level="INFO">Clicking element '//div[@id='top1']/div[@class='headericonsc']/div/div'.</msg>
+<status status="PASS" starttime="20220804 16:02:05.840" endtime="20220804 16:02:06.604"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${TEXTC}</var>
+<arg>//span[@id='price']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220804 16:02:06.746" level="INFO">${TEXTC} = 360 080 Kč</msg>
+<status status="PASS" starttime="20220804 16:02:06.604" endtime="20220804 16:02:06.746"/>
+</kw>
+<kw name="Fetch From Left" library="String">
+<var>${TEXT3}</var>
+<arg>${TEXTC}</arg>
+<arg>Kč</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<msg timestamp="20220804 16:02:06.747" level="INFO">${TEXT3} = 360 080 </msg>
+<status status="PASS" starttime="20220804 16:02:06.746" endtime="20220804 16:02:06.747"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${NUMBER3}</var>
+<arg>${TEXT3}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20220804 16:02:06.747" level="INFO">${NUMBER3} = 360080.0</msg>
+<status status="PASS" starttime="20220804 16:02:06.747" endtime="20220804 16:02:06.747"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${NUMBER3}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220804 16:02:06.749" level="INFO">${NUMBER3} = 360080.0</msg>
+<status status="PASS" starttime="20220804 16:02:06.748" endtime="20220804 16:02:06.749"/>
+</kw>
+<status status="PASS" starttime="20220804 16:02:05.839" endtime="20220804 16:02:06.749"/>
+</test>
+<test id="s1-t5" name="Confirm two most expensive products are in cart" line="50">
+<kw name="Evaluate" library="BuiltIn">
+<var>${CART}</var>
+<arg>${NUMBER1} + ${NUMBER2}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220804 16:02:06.752" level="INFO">${CART} = 360080.0</msg>
+<status status="PASS" starttime="20220804 16:02:06.751" endtime="20220804 16:02:06.752"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${CART} == ${NUMBER3}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220804 16:02:06.752" endtime="20220804 16:02:06.753"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220804 16:02:06.754" endtime="20220804 16:02:09.472"/>
+</kw>
+<status status="PASS" starttime="20220804 16:02:06.750" endtime="20220804 16:02:09.472"/>
+</test>
+<status status="PASS" starttime="20220804 16:01:39.644" endtime="20220804 16:02:09.472"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="App">App</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
