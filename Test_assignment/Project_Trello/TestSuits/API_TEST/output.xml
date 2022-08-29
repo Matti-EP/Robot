@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220829 13:02:19.637" rpa="false" schemaversion="3">
+<suite id="s1" name="API Test" source="C:\Users\matti-esko.pelkola\OneDrive - Accenture\Desktop\Test_app\Test_assignment\Project_Trello\TestSuits\API_TEST\API_Test.robot">
+<test id="s1-t1" name="Perform API POST request" line="9">
+<kw name="Connect to POST API" library="API_keywords">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${HOST}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220829 13:02:20.224" level="INFO">Creating Session using : alias=my_session, url=https://api.trello.com/1/cards/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220829 13:02:20.224" endtime="20220829 13:02:20.224"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>my_session</arg>
+<arg>${POST}</arg>
+<arg>${HEADERS}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220829 13:02:20.710" level="INFO">POST Request : url=https://api.trello.com/1/cards/?idList=62fe11e1745ae4313c883dcc&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ path_url=/1/cards/?idList=62fe11e1745ae4313c883dcc&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '55'} 
+ body=Create Dictionary Accept=application/json charset=utf-8 
+ </msg>
+<msg timestamp="20220829 13:02:20.710" level="INFO">POST Response : url=https://api.trello.com/1/cards/?idList=62fe11e1745ae4313c883dcc&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 29 Aug 2022 11:02:20 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '1105', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'DENY', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Surrogate-Control': 'no-store', 'Cache-Control': 'max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': 'Thu, 01 Jan 1970 00:00:00', 'X-Trello-Version': '1.151120.0', 'X-Trello-Environment': 'Production (Micros)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE', 'Access-Control-Allow-Headers': 'Authorization, Accept, Content-Type', 'Access-Control-Expose-Headers': 'x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining, x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining', 'X-Rate-Limit-Api-Token-Interval-Ms': '10000', 'X-Rate-Limit-Api-Token-Max': '100', 'X-Rate-Limit-Api-Token-Remaining': '99', 'X-Rate-Limit-Db-Query-Time-Interval-Ms': '600000', 'X-Rate-Limit-Db-Query-Time-Max': '7200000', 'X-Rate-Limit-Db-Query-Time-Remaining': '7199990', 'X-Rate-Limit-Action-Interval-Ms': '3600000', 'X-Rate-Limit-Action-Max': '15000', 'X-Rate-Limit-Action-Remaining': '14999', 'X-Rate-Limit-Api-Key-Interval-Ms': '10000', 'X-Rate-Limit-Api-Key-Max': '300', 'X-Rate-Limit-Api-Key-Remaining': '299', 'X-Rate-Limit-Member-Interval-Ms': '10000', 'X-Rate-Limit-Member-Max': '375', 'X-Rate-Limit-Member-Remaining': '374', 'Set-Cookie': 'preAuthProps=s%3A62fe0b879b9a0e07b19733c4%3AisEnterpriseAdmin%3Dfalse.jeNVYRrgk8EnG7hUyId%2FdhvTQRmhsmWXF%2BnP%2F%2Bcp%2FRc; Path=/; HttpOnly', 'X-Server-Time': '1661770940543', 'X-Envoy-Upstream-Service-Time': '286', 'Server': 'globaledge-envoy', 'Expect-Ct': 'report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/trello-edge", max-age=86400', 'Strict-Transport-Security': 'max-age=63072000; preload', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': '4554602b73d97d3e', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}'} 
+ body={"id":"630c9cbcb793b70045fc3a76","badges":{"attachmentsByType":{"trello":{"board":0,"card":0}},"location":false,"votes":0,"viewingMemberVoted":false,"subscribed":false,"fogbugz":"","checkItems":0,"checkItemsChecked":0,"checkItemsEarliestDue":null,"comments":0,"attachments":0,"description":false,"due":null,"dueComplete":false,"start":null},"checkItemStates":[],"closed":false,"dueComplete":false,"dateLastActivity":"2022-08-29T11:02:20.474Z","desc":"","descData":{"emoji":{}},"due":null,"dueReminder":null,"email":null,"idBoard":"62fe11e1745ae4313c883dc5","idChecklists":[],"idList":"62fe11e1745ae4313c883dcc","idMembers":[],"idMembersVoted":[],"idShort":93,"idAttachmentCover":null,"labels":[],"idLabels":[],"manualCoverAttachment":false,"name":"","pos":368640,"shortLink":"62G5iMLg","shortUrl":"https://trello.com/c/62G5iMLg","start":null,"subscribed":false,"url":"https://trello.com/c/62G5iMLg/93--","cover":{"idAttachment":null,"color":null,"idUploadedBackground":null,"size":"normal","brightness":"dark","idPlugin":null},"isTemplate":false,"cardRole":null,"attachments":[],"stickers":[],"limits":{}} 
+ </msg>
+<msg timestamp="20220829 13:02:20.710" level="INFO">C:\Users\matti-esko.pelkola\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.trello.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220829 13:02:20.710" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220829 13:02:20.224" endtime="20220829 13:02:20.710"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${response.status_code} == ${EXPECTED_RESPONSE_CODE}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220829 13:02:20.721" endtime="20220829 13:02:20.722"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${JSON_RESPONSE}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220829 13:02:20.722" level="INFO">${JSON_RESPONSE} = {'id': '630c9cbcb793b70045fc3a76', 'badges': {'attachmentsByType': {'trello': {'board': 0, 'card': 0}}, 'location': False, 'votes': 0, 'viewingMemberVoted': False, 'subscribed': False, 'fogbugz': '', ...</msg>
+<status status="PASS" starttime="20220829 13:02:20.722" endtime="20220829 13:02:20.723"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${CARD_ID}</var>
+<arg>${JSON_RESPONSE['id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220829 13:02:20.724" level="INFO">${CARD_ID} = 630c9cbcb793b70045fc3a76</msg>
+<status status="PASS" starttime="20220829 13:02:20.723" endtime="20220829 13:02:20.724"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${CARD_ID}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220829 13:02:20.724" level="INFO">${CARD_ID} = 630c9cbcb793b70045fc3a76</msg>
+<status status="PASS" starttime="20220829 13:02:20.724" endtime="20220829 13:02:20.724"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:20.223" endtime="20220829 13:02:20.724"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:20.223" endtime="20220829 13:02:20.725"/>
+</test>
+<test id="s1-t2" name="Perform API GET request" line="12">
+<kw name="Connect to GET API" library="API_keywords">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${HOST}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220829 13:02:20.729" level="INFO">Creating Session using : alias=my_session, url=https://api.trello.com/1/cards/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220829 13:02:20.729" endtime="20220829 13:02:20.729"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>my_session</arg>
+<arg>${CARD_ID}${GET_DELETE}</arg>
+<arg>${HEADERS}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220829 13:02:21.040" level="INFO">GET Request : url=https://api.trello.com/1/cards/630c9cbcb793b70045fc3a76?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841&amp;Create%20Dictionary%20Accept=application/json%20charset=utf-8 
+ path_url=/1/cards/630c9cbcb793b70045fc3a76?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841&amp;Create%20Dictionary%20Accept=application/json%20charset=utf-8 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220829 13:02:21.040" level="INFO">GET Response : url=https://api.trello.com/1/cards/630c9cbcb793b70045fc3a76?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841&amp;Create%20Dictionary%20Accept=application/json%20charset=utf-8 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 29 Aug 2022 11:02:20 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '1062', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'DENY', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Surrogate-Control': 'no-store', 'Cache-Control': 'max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': 'Thu, 01 Jan 1970 00:00:00', 'X-Trello-Version': '1.151120.0', 'X-Trello-Environment': 'Production (Micros)', 'Set-Cookie': 'dsc=a9d49902173ee1f9bedfae955175e8cdb8b1050957d85b0db8b7da96a3c3d3a4; Path=/; Expires=Thu, 01 Sep 2022 11:02:20 GMT; Secure, preAuthProps=s%3A62fe0b879b9a0e07b19733c4%3AisEnterpriseAdmin%3Dfalse.jeNVYRrgk8EnG7hUyId%2FdhvTQRmhsmWXF%2BnP%2F%2Bcp%2FRc; Path=/; HttpOnly', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE', 'Access-Control-Allow-Headers': 'Authorization, Accept, Content-Type', 'Access-Control-Expose-Headers': 'x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining, x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining', 'X-Rate-Limit-Db-Query-Time-Interval-Ms': '600000', 'X-Rate-Limit-Db-Query-Time-Max': '7200000', 'X-Rate-Limit-Db-Query-Time-Remaining': '7199990', 'X-Rate-Limit-Api-Token-Interval-Ms': '10000', 'X-Rate-Limit-Api-Token-Max': '100', 'X-Rate-Limit-Api-Token-Remaining': '98', 'X-Rate-Limit-Api-Key-Interval-Ms': '10000', 'X-Rate-Limit-Api-Key-Max': '300', 'X-Rate-Limit-Api-Key-Remaining': '298', 'X-Rate-Limit-Member-Interval-Ms': '10000', 'X-Rate-Limit-Member-Max': '375', 'X-Rate-Limit-Member-Remaining': '373', 'X-Server-Time': '1661770940868', 'X-Envoy-Upstream-Service-Time': '154', 'Server': 'globaledge-envoy', 'Expect-Ct': 'report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/trello-edge", max-age=86400', 'Strict-Transport-Security': 'max-age=63072000; preload', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': '04ffd9181d027ffc', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}'} 
+ body={"id":"630c9cbcb793b70045fc3a76","badges":{"attachmentsByType":{"trello":{"board":0,"card":0}},"location":false,"votes":0,"viewingMemberVoted":false,"subscribed":false,"fogbugz":"","checkItems":0,"checkItemsChecked":0,"checkItemsEarliestDue":null,"comments":0,"attachments":0,"description":false,"due":null,"dueComplete":false,"start":null},"checkItemStates":[],"closed":false,"dueComplete":false,"dateLastActivity":"2022-08-29T11:02:20.474Z","desc":"","descData":{"emoji":{}},"due":null,"dueReminder":null,"email":null,"idBoard":"62fe11e1745ae4313c883dc5","idChecklists":[],"idList":"62fe11e1745ae4313c883dcc","idMembers":[],"idMembersVoted":[],"idShort":93,"idAttachmentCover":null,"labels":[],"idLabels":[],"manualCoverAttachment":false,"name":"","pos":368640,"shortLink":"62G5iMLg","shortUrl":"https://trello.com/c/62G5iMLg","start":null,"subscribed":false,"url":"https://trello.com/c/62G5iMLg/93--","cover":{"idAttachment":null,"color":null,"idUploadedBackground":null,"size":"normal","brightness":"dark","idPlugin":null},"isTemplate":false,"cardRole":null} 
+ </msg>
+<msg timestamp="20220829 13:02:21.040" level="INFO">C:\Users\matti-esko.pelkola\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.trello.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220829 13:02:21.040" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220829 13:02:20.729" endtime="20220829 13:02:21.040"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${response.status_code} == ${EXPECTED_RESPONSE_CODE}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220829 13:02:21.040" endtime="20220829 13:02:21.046"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:20.728" endtime="20220829 13:02:21.046"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:20.728" endtime="20220829 13:02:21.047"/>
+</test>
+<test id="s1-t3" name="Perform API PUT request" line="15">
+<kw name="Connect to PUT API" library="API_keywords">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${HOST}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220829 13:02:21.049" level="INFO">Creating Session using : alias=my_session, url=https://api.trello.com/1/cards/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220829 13:02:21.049" endtime="20220829 13:02:21.050"/>
+</kw>
+<kw name="PUT On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>my_session</arg>
+<arg>${CARD_ID}${PUT}</arg>
+<arg>${HEADERS}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20220829 13:02:21.385" level="INFO">PUT Request : url=https://api.trello.com/1/cards/630c9cbcb793b70045fc3a76?name=Korttinimi&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ path_url=/1/cards/630c9cbcb793b70045fc3a76?name=Korttinimi&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '55'} 
+ body=Create Dictionary Accept=application/json charset=utf-8 
+ </msg>
+<msg timestamp="20220829 13:02:21.385" level="INFO">PUT Response : url=https://api.trello.com/1/cards/630c9cbcb793b70045fc3a76?name=Korttinimi&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 29 Aug 2022 11:02:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '1081', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'DENY', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Surrogate-Control': 'no-store', 'Cache-Control': 'max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': 'Thu, 01 Jan 1970 00:00:00', 'X-Trello-Version': '1.151120.0', 'X-Trello-Environment': 'Production (Micros)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE', 'Access-Control-Allow-Headers': 'Authorization, Accept, Content-Type', 'Access-Control-Expose-Headers': 'x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining, x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining', 'X-Rate-Limit-Api-Token-Interval-Ms': '10000', 'X-Rate-Limit-Api-Token-Max': '100', 'X-Rate-Limit-Api-Token-Remaining': '97', 'X-Rate-Limit-Db-Query-Time-Interval-Ms': '600000', 'X-Rate-Limit-Db-Query-Time-Max': '7200000', 'X-Rate-Limit-Db-Query-Time-Remaining': '7199990', 'X-Rate-Limit-Action-Interval-Ms': '3600000', 'X-Rate-Limit-Action-Max': '15000', 'X-Rate-Limit-Action-Remaining': '14999', 'X-Rate-Limit-Api-Key-Interval-Ms': '10000', 'X-Rate-Limit-Api-Key-Max': '300', 'X-Rate-Limit-Api-Key-Remaining': '297', 'X-Rate-Limit-Member-Interval-Ms': '10000', 'X-Rate-Limit-Member-Max': '375', 'X-Rate-Limit-Member-Remaining': '372', 'Set-Cookie': 'preAuthProps=s%3A62fe0b879b9a0e07b19733c4%3AisEnterpriseAdmin%3Dfalse.jeNVYRrgk8EnG7hUyId%2FdhvTQRmhsmWXF%2BnP%2F%2Bcp%2FRc; Path=/; HttpOnly', 'X-Server-Time': '1661770941221', 'X-Envoy-Upstream-Service-Time': '191', 'Server': 'globaledge-envoy', 'Expect-Ct': 'report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/trello-edge", max-age=86400', 'Strict-Transport-Security': 'max-age=63072000; preload', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': '25a8a80f11e42a2f', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}'} 
+ body={"id":"630c9cbcb793b70045fc3a76","badges":{"attachmentsByType":{"trello":{"board":0,"card":0}},"location":false,"votes":0,"viewingMemberVoted":false,"subscribed":false,"fogbugz":"","checkItems":0,"checkItemsChecked":0,"checkItemsEarliestDue":null,"comments":0,"attachments":0,"description":false,"due":null,"dueComplete":false,"start":null},"checkItemStates":[],"closed":false,"dueComplete":false,"dateLastActivity":"2022-08-29T11:02:21.167Z","desc":"","descData":{"emoji":{}},"due":null,"dueReminder":null,"email":null,"idBoard":"62fe11e1745ae4313c883dc5","idChecklists":[],"idList":"62fe11e1745ae4313c883dcc","idMembers":[],"idMembersVoted":[],"idShort":93,"idAttachmentCover":null,"labels":[],"idLabels":[],"manualCoverAttachment":false,"name":"Korttinimi","pos":368640,"shortLink":"62G5iMLg","shortUrl":"https://trello.com/c/62G5iMLg","start":null,"subscribed":false,"url":"https://trello.com/c/62G5iMLg/93-korttinimi","cover":{"idAttachment":null,"color":null,"idUploadedBackground":null,"size":"normal","brightness":"dark","idPlugin":null},"isTemplate":false,"cardRole":null} 
+ </msg>
+<msg timestamp="20220829 13:02:21.385" level="INFO">C:\Users\matti-esko.pelkola\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.trello.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220829 13:02:21.385" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220829 13:02:21.050" endtime="20220829 13:02:21.385"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${response.status_code} == ${EXPECTED_RESPONSE_CODE}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220829 13:02:21.385" endtime="20220829 13:02:21.399"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:21.049" endtime="20220829 13:02:21.399"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:21.048" endtime="20220829 13:02:21.399"/>
+</test>
+<test id="s1-t4" name="Perform API DELETE request" line="18">
+<kw name="Connect to DELETE API" library="API_keywords">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${HOST}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220829 13:02:21.400" level="INFO">Creating Session using : alias=my_session, url=https://api.trello.com/1/cards/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220829 13:02:21.400" endtime="20220829 13:02:21.400"/>
+</kw>
+<kw name="DELETE On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>my_session</arg>
+<arg>${CARD_ID}${GET_DELETE}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<msg timestamp="20220829 13:02:21.849" level="INFO">DELETE Request : url=https://api.trello.com/1/cards/630c9cbcb793b70045fc3a76?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ path_url=/1/cards/630c9cbcb793b70045fc3a76?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20220829 13:02:21.849" level="INFO">DELETE Response : url=https://api.trello.com/1/cards/630c9cbcb793b70045fc3a76?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 29 Aug 2022 11:02:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '13', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'DENY', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Surrogate-Control': 'no-store', 'Cache-Control': 'max-age=0, must-revalidate, no-cache, no-store', 'Pragma': 'no-cache', 'Expires': 'Thu, 01 Jan 1970 00:00:00', 'X-Trello-Version': '1.151120.0', 'X-Trello-Environment': 'Production (Micros)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE', 'Access-Control-Allow-Headers': 'Authorization, Accept, Content-Type', 'Access-Control-Expose-Headers': 'x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining, x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining', 'X-Rate-Limit-Api-Token-Interval-Ms': '10000', 'X-Rate-Limit-Api-Token-Max': '100', 'X-Rate-Limit-Api-Token-Remaining': '96', 'X-Rate-Limit-Db-Query-Time-Interval-Ms': '600000', 'X-Rate-Limit-Db-Query-Time-Max': '7200000', 'X-Rate-Limit-Db-Query-Time-Remaining': '7199990', 'X-Rate-Limit-Action-Interval-Ms': '3600000', 'X-Rate-Limit-Action-Max': '15000', 'X-Rate-Limit-Action-Remaining': '14999', 'X-Rate-Limit-Api-Key-Interval-Ms': '10000', 'X-Rate-Limit-Api-Key-Max': '300', 'X-Rate-Limit-Api-Key-Remaining': '296', 'X-Rate-Limit-Member-Interval-Ms': '10000', 'X-Rate-Limit-Member-Max': '375', 'X-Rate-Limit-Member-Remaining': '371', 'Set-Cookie': 'preAuthProps=s%3A62fe0b879b9a0e07b19733c4%3AisEnterpriseAdmin%3Dfalse.jeNVYRrgk8EnG7hUyId%2FdhvTQRmhsmWXF%2BnP%2F%2Bcp%2FRc; Path=/; HttpOnly', 'X-Server-Time': '1661770941675', 'X-Envoy-Upstream-Service-Time': '304', 'Server': 'globaledge-envoy', 'Expect-Ct': 'report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/trello-edge", max-age=86400', 'Strict-Transport-Security': 'max-age=63072000; preload', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': 'a436fa65f553e8a7', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}'} 
+ body={"limits":{}} 
+ </msg>
+<msg timestamp="20220829 13:02:21.850" level="INFO">C:\Users\matti-esko.pelkola\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.trello.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220829 13:02:21.851" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220829 13:02:21.400" endtime="20220829 13:02:21.851"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${response.status_code} == ${EXPECTED_RESPONSE_CODE}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220829 13:02:21.851" endtime="20220829 13:02:21.852"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:21.400" endtime="20220829 13:02:21.852"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:21.400" endtime="20220829 13:02:21.852"/>
+</test>
+<test id="s1-t5" name="Perform NEGATIVE API GET request" line="21">
+<kw name="Unsuccessful GET API" library="API_keywords">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${HOST}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220829 13:02:21.855" level="INFO">Creating Session using : alias=my_session, url=https://api.trello.com/1/cards/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220829 13:02:21.855" endtime="20220829 13:02:21.856"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<arg>${GETERROR}</arg>
+<arg>Get On Session</arg>
+<arg>my_session</arg>
+<arg>${GET_FAULT}</arg>
+<arg>${HEADERS}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="GET On Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${GET_FAULT}</arg>
+<arg>${HEADERS}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220829 13:02:22.122" level="INFO">GET Request : url=https://api.trello.com/1/cards/123?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841&amp;Create%20Dictionary%20Accept=application/json%20charset=utf-8 
+ path_url=/1/cards/123?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841&amp;Create%20Dictionary%20Accept=application/json%20charset=utf-8 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220829 13:02:22.122" level="INFO">GET Response : url=https://api.trello.com/1/cards/123?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841&amp;Create%20Dictionary%20Accept=application/json%20charset=utf-8 
+ status=400, reason=Bad Request 
+ headers={'Date': 'Mon, 29 Aug 2022 11:02:21 GMT', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '10', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'DENY', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Surrogate-Control': 'no-store', 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate', 'Pragma': 'no-cache', 'Expires': '0', 'X-Trello-Version': '1.151120.0', 'X-Trello-Environment': 'Production (Micros)', 'Set-Cookie': 'dsc=c15dedd349065634d15f782d127ad07cb5d593838bcce4383e9cdf72882e2d5c; Path=/; Expires=Thu, 01 Sep 2022 11:02:21 GMT; Secure', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE', 'Access-Control-Allow-Headers': 'Authorization, Accept, Content-Type', 'Access-Control-Expose-Headers': 'x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining, x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining', 'X-Rate-Limit-Api-Token-Interval-Ms': '10000', 'X-Rate-Limit-Api-Token-Max': '100', 'X-Rate-Limit-Api-Token-Remaining': '95', 'X-Rate-Limit-Db-Query-Time-Interval-Ms': '600000', 'X-Rate-Limit-Db-Query-Time-Max': '7200000', 'X-Rate-Limit-Db-Query-Time-Remaining': '7199990', 'X-Rate-Limit-Api-Key-Interval-Ms': '10000', 'X-Rate-Limit-Api-Key-Max': '300', 'X-Rate-Limit-Api-Key-Remaining': '295', 'X-Envoy-Upstream-Service-Time': '118', 'Server': 'globaledge-envoy', 'Expect-Ct': 'report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/trello-edge", max-age=86400', 'Strict-Transport-Security': 'max-age=63072000; preload', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': '800959ac1db13128', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}'} 
+ body=invalid id 
+ </msg>
+<msg timestamp="20220829 13:02:22.122" level="INFO">C:\Users\matti-esko.pelkola\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.trello.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220829 13:02:22.122" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://api.trello.com/1/cards/123?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841&amp;Create%20Dictionary%20Accept=application/json%20charset=utf-8</msg>
+<status status="FAIL" starttime="20220829 13:02:21.856" endtime="20220829 13:02:22.157"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:21.856" endtime="20220829 13:02:22.157"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:21.855" endtime="20220829 13:02:22.158"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:21.854" endtime="20220829 13:02:22.158"/>
+</test>
+<test id="s1-t6" name="Perform NEGATIVE API POST request" line="24">
+<kw name="Unsuccessful POST API" library="API_keywords">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${HOST}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220829 13:02:22.161" level="INFO">Creating Session using : alias=my_session, url=https://api.trello.com/1/cards/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220829 13:02:22.161" endtime="20220829 13:02:22.161"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<arg>${POSTERROR}</arg>
+<arg>POST On Session</arg>
+<arg>my_session</arg>
+<arg>${POST_FAULT}</arg>
+<arg>${HEADERS}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${POST_FAULT}</arg>
+<arg>${HEADERS}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220829 13:02:22.447" level="INFO">POST Request : url=https://api.trello.com/1/cards/?idList=&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ path_url=/1/cards/?idList=&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '55'} 
+ body=Create Dictionary Accept=application/json charset=utf-8 
+ </msg>
+<msg timestamp="20220829 13:02:22.447" level="INFO">POST Response : url=https://api.trello.com/1/cards/?idList=&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ status=400, reason=Bad Request 
+ headers={'Date': 'Mon, 29 Aug 2022 11:02:22 GMT', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '24', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'DENY', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Surrogate-Control': 'no-store', 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate', 'Pragma': 'no-cache', 'Expires': '0', 'X-Trello-Version': '1.151120.0', 'X-Trello-Environment': 'Production (Micros)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE', 'Access-Control-Allow-Headers': 'Authorization, Accept, Content-Type', 'Access-Control-Expose-Headers': 'x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining, x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining', 'X-Rate-Limit-Api-Token-Interval-Ms': '10000', 'X-Rate-Limit-Api-Token-Max': '100', 'X-Rate-Limit-Api-Token-Remaining': '94', 'X-Rate-Limit-Db-Query-Time-Interval-Ms': '600000', 'X-Rate-Limit-Db-Query-Time-Max': '7200000', 'X-Rate-Limit-Db-Query-Time-Remaining': '7199990', 'X-Rate-Limit-Action-Interval-Ms': '3600000', 'X-Rate-Limit-Action-Max': '15000', 'X-Rate-Limit-Action-Remaining': '14999', 'X-Rate-Limit-Api-Key-Interval-Ms': '10000', 'X-Rate-Limit-Api-Key-Max': '300', 'X-Rate-Limit-Api-Key-Remaining': '294', 'X-Envoy-Upstream-Service-Time': '113', 'Server': 'globaledge-envoy', 'Expect-Ct': 'report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/trello-edge", max-age=86400', 'Strict-Transport-Security': 'max-age=63072000; preload', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': '68b3d2a64f5ba38e', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}'} 
+ body=invalid value for idList 
+ </msg>
+<msg timestamp="20220829 13:02:22.447" level="INFO">C:\Users\matti-esko.pelkola\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.trello.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220829 13:02:22.447" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://api.trello.com/1/cards/?idList=&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841</msg>
+<status status="FAIL" starttime="20220829 13:02:22.162" endtime="20220829 13:02:22.460"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:22.162" endtime="20220829 13:02:22.460"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:22.161" endtime="20220829 13:02:22.460"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:22.160" endtime="20220829 13:02:22.461"/>
+</test>
+<test id="s1-t7" name="Perform NEGATIVE API PUT request" line="27">
+<kw name="Unsuccessful PUT API" library="API_keywords">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${HOST}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220829 13:02:22.464" level="INFO">Creating Session using : alias=my_session, url=https://api.trello.com/1/cards/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220829 13:02:22.464" endtime="20220829 13:02:22.465"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<arg>${PUTERROR}</arg>
+<arg>PUT On Session</arg>
+<arg>my_session</arg>
+<arg>${PUT_FAULT}</arg>
+<arg>${HEADERS}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="PUT On Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${PUT_FAULT}</arg>
+<arg>${HEADERS}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20220829 13:02:22.725" level="INFO">PUT Request : url=https://api.trello.com/1/cards/ERROR?name=Korttinimi&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ path_url=/1/cards/ERROR?name=Korttinimi&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '55'} 
+ body=Create Dictionary Accept=application/json charset=utf-8 
+ </msg>
+<msg timestamp="20220829 13:02:22.725" level="INFO">PUT Response : url=https://api.trello.com/1/cards/ERROR?name=Korttinimi&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ status=400, reason=Bad Request 
+ headers={'Date': 'Mon, 29 Aug 2022 11:02:22 GMT', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '10', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'DENY', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Surrogate-Control': 'no-store', 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate', 'Pragma': 'no-cache', 'Expires': '0', 'X-Trello-Version': '1.151120.0', 'X-Trello-Environment': 'Production (Micros)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE', 'Access-Control-Allow-Headers': 'Authorization, Accept, Content-Type', 'Access-Control-Expose-Headers': 'x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining, x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining', 'X-Rate-Limit-Api-Token-Interval-Ms': '10000', 'X-Rate-Limit-Api-Token-Max': '100', 'X-Rate-Limit-Api-Token-Remaining': '93', 'X-Rate-Limit-Db-Query-Time-Interval-Ms': '600000', 'X-Rate-Limit-Db-Query-Time-Max': '7200000', 'X-Rate-Limit-Db-Query-Time-Remaining': '7199990', 'X-Rate-Limit-Action-Interval-Ms': '3600000', 'X-Rate-Limit-Action-Max': '15000', 'X-Rate-Limit-Action-Remaining': '14999', 'X-Rate-Limit-Api-Key-Interval-Ms': '10000', 'X-Rate-Limit-Api-Key-Max': '300', 'X-Rate-Limit-Api-Key-Remaining': '293', 'X-Envoy-Upstream-Service-Time': '113', 'Server': 'globaledge-envoy', 'Expect-Ct': 'report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/trello-edge", max-age=86400', 'Strict-Transport-Security': 'max-age=63072000; preload', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': 'c97ffee874f317af', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}'} 
+ body=invalid id 
+ </msg>
+<msg timestamp="20220829 13:02:22.725" level="INFO">C:\Users\matti-esko.pelkola\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.trello.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220829 13:02:22.727" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://api.trello.com/1/cards/ERROR?name=Korttinimi&amp;key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841</msg>
+<status status="FAIL" starttime="20220829 13:02:22.465" endtime="20220829 13:02:22.727"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:22.465" endtime="20220829 13:02:22.728"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:22.464" endtime="20220829 13:02:22.728"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:22.464" endtime="20220829 13:02:22.729"/>
+</test>
+<test id="s1-t8" name="Perform NEGATIVE API DELETE request" line="30">
+<kw name="Unsuccessful DELETE API" library="API_keywords">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${HOST}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220829 13:02:22.731" level="INFO">Creating Session using : alias=my_session, url=https://api.trello.com/1/cards/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220829 13:02:22.731" endtime="20220829 13:02:22.731"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<arg>${DELETEERROR}</arg>
+<arg>DELETE On Session</arg>
+<arg>my_session</arg>
+<arg>${DELETE_FAULT}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="DELETE On Session" library="RequestsLibrary">
+<arg>my_session</arg>
+<arg>${DELETE_FAULT}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<msg timestamp="20220829 13:02:22.983" level="INFO">DELETE Request : url=https://api.trello.com/1/cards/?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ path_url=/1/cards/?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20220829 13:02:22.984" level="INFO">DELETE Response : url=https://api.trello.com/1/cards/?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ status=404, reason=Not Found 
+ headers={'Date': 'Mon, 29 Aug 2022 11:02:22 GMT', 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': '131', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'DENY', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Surrogate-Control': 'no-store', 'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate', 'Pragma': 'no-cache', 'Expires': '0', 'X-Trello-Version': '1.151120.0', 'X-Trello-Environment': 'Production (Micros)', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE', 'Access-Control-Allow-Headers': 'Authorization, Accept, Content-Type', 'Access-Control-Expose-Headers': 'x-rate-limit-api-key-interval-ms, x-rate-limit-api-key-max, x-rate-limit-api-key-remaining, x-rate-limit-api-token-interval-ms, x-rate-limit-api-token-max, x-rate-limit-api-token-remaining', 'X-Envoy-Upstream-Service-Time': '98', 'Server': 'globaledge-envoy', 'Expect-Ct': 'report-uri="https://web-security-reports.services.atlassian.com/expect-ct-report/trello-edge", max-age=86400', 'Strict-Transport-Security': 'max-age=63072000; preload', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': 'f0ad8c02435b7550', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}'} 
+ body=Cannot DELETE /1/cards/?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841 
+ </msg>
+<msg timestamp="20220829 13:02:22.984" level="INFO">C:\Users\matti-esko.pelkola\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.trello.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220829 13:02:22.985" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://api.trello.com/1/cards/?key=3811a2a5a39fe31676e2c56e24fa7cb7&amp;token=b850222ef62af0713952a88ae9bec671b8b8b3d74dac3e22ed765d9d51083841</msg>
+<status status="FAIL" starttime="20220829 13:02:22.732" endtime="20220829 13:02:22.985"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:22.732" endtime="20220829 13:02:22.985"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:22.731" endtime="20220829 13:02:22.985"/>
+</kw>
+<status status="PASS" starttime="20220829 13:02:22.730" endtime="20220829 13:02:22.987"/>
+</test>
+<status status="PASS" starttime="20220829 13:02:19.646" endtime="20220829 13:02:22.988"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="8" fail="0" skip="0" id="s1" name="API Test">API Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220829 13:11:04.002" rpa="false" schemaversion="3">
+<suite id="s1" name="GUI Test" source="C:\Users\matti-esko.pelkola\OneDrive - Accenture\Desktop\Test_app\Test_assignment\Project_Trello\TestSuits\GUI_TEST\GUI_Test.robot">
+<test id="s1-t1" name="Login" line="7">
+<kw name="Login Webpage Trello" library="Login_keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${WEBSITE}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220829 13:11:04.259" level="INFO">Opening browser 'chrome' to base url 'https://trello.com/b/8Vkswqu0/project-management'.</msg>
+<status status="PASS" starttime="20220829 13:11:04.259" endtime="20220829 13:11:08.265"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${USER_NAME_LOGIN_FIELD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:08.266" level="INFO">Clicking element '//a[contains(text(), 'Log in')]'.</msg>
+<status status="PASS" starttime="20220829 13:11:08.265" endtime="20220829 13:11:09.732"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER_ACCOUNT_LOGIN_FIELD}</arg>
+<arg>${USER_ACCOUNT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:09.732" level="INFO">Typing text 'mattiesko.pelkola@gmail.com' into text field '//input[@id="user"]'.</msg>
+<status status="PASS" starttime="20220829 13:11:09.732" endtime="20220829 13:11:09.804"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${LOGIN_WITH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220829 13:11:09.804" endtime="20220829 13:11:10.659"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_WITH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:10.659" level="INFO">Clicking element '//input[@value="Log in with Atlassian"]'.</msg>
+<status status="PASS" starttime="20220829 13:11:10.659" endtime="20220829 13:11:13.439"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220829 13:11:13.439" endtime="20220829 13:11:13.458"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${USER_PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:13.459" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
+<msg timestamp="20220829 13:11:13.485" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220829 13:11:13.545" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220829 13:11:13.458" endtime="20220829 13:11:13.545"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LOGIN_SUBMIT}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:13.545" level="INFO">Clicking button '//button[@id="login-submit"]'.</msg>
+<status status="PASS" starttime="20220829 13:11:13.545" endtime="20220829 13:11:13.608"/>
+</kw>
+<status status="PASS" starttime="20220829 13:11:04.259" endtime="20220829 13:11:13.608"/>
+</kw>
+<status status="PASS" starttime="20220829 13:11:04.258" endtime="20220829 13:11:13.609"/>
+</test>
+<test id="s1-t2" name="Confirm Card Exists" line="9">
+<kw name="Confirm Card Exists" library="Board_keywords">
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220829 13:11:15.611" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220829 13:11:13.611" endtime="20220829 13:11:15.611"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${CONTAIN_CARD}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220829 13:11:20.364" level="INFO">Current page contains element '//span[contains(text(), "Korttinimi")]'.</msg>
+<status status="PASS" starttime="20220829 13:11:15.612" endtime="20220829 13:11:20.364"/>
+</kw>
+<status status="PASS" starttime="20220829 13:11:13.611" endtime="20220829 13:11:20.365"/>
+</kw>
+<status status="PASS" starttime="20220829 13:11:13.610" endtime="20220829 13:11:20.365"/>
+</test>
+<test id="s1-t3" name="Create New Card" line="11">
+<kw name="Create New Card" library="Board_keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_CREATE_ELEMENT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:20.370" level="INFO">Clicking element '//span[contains(text(), 'Add a card')]'.</msg>
+<status status="PASS" starttime="20220829 13:11:20.369" endtime="20220829 13:11:20.423"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_TEXT_NEW_CARD}</arg>
+<arg>${NEW_CARD_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:20.424" level="INFO">Typing text 'New card created' into text field '//textarea[contains(@class, "list-card-composer-textarea js-card-title")]'.</msg>
+<status status="PASS" starttime="20220829 13:11:20.423" endtime="20220829 13:11:20.520"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ADD_CARD_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:20.520" level="INFO">Clicking element '//input[@value="Add card"]'.</msg>
+<status status="PASS" starttime="20220829 13:11:20.520" endtime="20220829 13:11:20.580"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${SHOULD_CONTAIN_ELEMENT}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220829 13:11:20.594" level="INFO">Current page contains element '//*[contains(text(), "New card created")]'.</msg>
+<status status="PASS" starttime="20220829 13:11:20.580" endtime="20220829 13:11:20.594"/>
+</kw>
+<status status="PASS" starttime="20220829 13:11:20.369" endtime="20220829 13:11:20.594"/>
+</kw>
+<status status="PASS" starttime="20220829 13:11:20.368" endtime="20220829 13:11:20.596"/>
+</test>
+<test id="s1-t4" name="Update Card" line="13">
+<kw name="Update Card" library="Board_keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MOUSE_OVER_UPDATE}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220829 13:11:20.598" endtime="20220829 13:11:21.056"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${MOUSE_OVER_UPDATE}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220829 13:11:21.057" level="INFO">Simulating Mouse Over on element '//a[contains(@href,'new-card-created')]//span[contains(@class, "icon-sm icon-edit list-card-operation dark-hover js-open-quick-card-editor js-card-menu")]'.</msg>
+<status status="PASS" starttime="20220829 13:11:21.056" endtime="20220829 13:11:21.337"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_ELEMENT_TO_UPDATE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:21.338" level="INFO">Clicking element '//a[contains(@href,'new-card-created')]//span[contains(@class, "icon-sm icon-edit list-card-operation dark-hover js-open-quick-card-editor js-card-menu")]'.</msg>
+<status status="PASS" starttime="20220829 13:11:21.337" endtime="20220829 13:11:21.406"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_TEXT_FIELD_FOR_UPDATE}</arg>
+<arg>${UPDATED_TEXT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:21.407" level="INFO">Typing text 'This is updated text' into text field '//textarea[contains(@class, "list-card-edit-title js-edit-card-title")]'.</msg>
+<status status="PASS" starttime="20220829 13:11:21.407" endtime="20220829 13:11:21.502"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SAVE_UPDATES_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:21.502" level="INFO">Clicking element '//input[contains(@class, "nch-button nch-button--primary wide js-save-edits")]'.</msg>
+<status status="PASS" starttime="20220829 13:11:21.502" endtime="20220829 13:11:21.556"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${SHOULD_CONTAIN_ELEMENT}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220829 13:11:21.564" level="INFO">Current page contains element '//*[contains(text(), "New card created")]'.</msg>
+<status status="PASS" starttime="20220829 13:11:21.556" endtime="20220829 13:11:21.565"/>
+</kw>
+<status status="PASS" starttime="20220829 13:11:20.597" endtime="20220829 13:11:21.565"/>
+</kw>
+<status status="PASS" starttime="20220829 13:11:20.596" endtime="20220829 13:11:21.566"/>
+</test>
+<test id="s1-t5" name="Delete Card" line="15">
+<kw name="Delete Card" library="Board_keywords">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${MOUSE_OVER_DELETE}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220829 13:11:21.568" level="INFO">Simulating Mouse Over on element '//a[contains(@href,'new-card-created')]//span[contains(@class, "icon-sm icon-edit list-card-operation dark-hover js-open-quick-card-editor js-card-menu")]'.</msg>
+<status status="PASS" starttime="20220829 13:11:21.568" endtime="20220829 13:11:21.838"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_ELEMENT_TO_DELETE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:21.838" level="INFO">Clicking element '//a[contains(@href,'new-card-created')]//span[contains(@class, "icon-sm icon-edit list-card-operation dark-hover js-open-quick-card-editor js-card-menu")]'.</msg>
+<status status="PASS" starttime="20220829 13:11:21.838" endtime="20220829 13:11:21.878"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_ELEMENT_TO_CONFIRM_DELETE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220829 13:11:21.878" level="INFO">Clicking element '//a[contains(@class, "quick-card-editor-buttons-item js-archive")]'.</msg>
+<status status="PASS" starttime="20220829 13:11:21.878" endtime="20220829 13:11:21.928"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>${DELETE_SHOULD_NOT_CONTAIN_ELEMENT}</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20220829 13:11:21.939" level="INFO">Current page does not contain element '//a[contains(@class, "list-card js-member-droppable ui-droppable") and .//span[contains(., "new-card-created")]]'.</msg>
+<status status="PASS" starttime="20220829 13:11:21.929" endtime="20220829 13:11:21.939"/>
+</kw>
+<status status="PASS" starttime="20220829 13:11:21.568" endtime="20220829 13:11:21.939"/>
+</kw>
+<status status="PASS" starttime="20220829 13:11:21.567" endtime="20220829 13:11:21.940"/>
+</test>
+<status status="PASS" starttime="20220829 13:11:04.002" endtime="20220829 13:11:21.941"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="GUI Test">GUI Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

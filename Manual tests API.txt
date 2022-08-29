@@ -1,0 +1,132 @@
+Test name: CREATE a card
+Test id: 
+	Matti 1
+Objective: 
+	Test, using terminal, that Trello API successfully creates a new card and test that 	in negative cases this does not happen.
+	Prerequisites: An API key and token. Valid Trello board.
+Test requirements: 
+	Valid API key and token. Terminal for posting requests and valid commands.
+Test steps (positive):
+	1. Open terminal
+	2. Prepare valid POST request with valid idList, API key and Token
+	3. Send Request
+	4. Confirm creation of new card by inspecting received json file that should 	contain the ID of created card
+
+curl --request POST \
+--url 'https://api.trello.com/1/cards?idList={}&key={}&token={}' \
+--header 'Accept: application/json'
+
+Expected results:
+	Terminal returns a json output that includes the id of a created card.
+
+Test steps (negative):
+	1. Open terminal
+	2. Prepare an invalid POST request with invalid idList, API key and Token
+	3. Send Request
+	4. Confirm failure of POST request from terminal
+
+curl --request POST \
+--url 'https://api.trello.com/1/cards?idList=XXXXXXXXXXXXX&key={}&token={}' \
+--header 'Accept: application/json'
+
+Expected results:
+	Terminal returns an error. No card created.
+
+Test name: READ a card
+Test id: 
+	Matti 2
+Objective: 
+	Test, using terminal, that Trello API successfully gets a card and test that in 	negative cases this does not happen.
+Prerequisites: 
+	An API key and token. An existing card that can be read. Valid Trello board.
+Test requirements: 
+	Valid API key and token. Terminal for posting requests and valid commands.
+Test steps (positive):
+	1. Open terminal
+	2. Prepare valid GET request with valid idList, API key and Token
+	3. Send Request
+	4. Confirm READ card by inspecting terminal output
+
+curl --request GET \
+--url 'https://api.trello.com/1/cards/{}?key={}&token={}' \
+--header 'Accept: application/json'
+
+Expected results:
+	Terminal returns a json output that includes expected data that matches expectations.
+
+Test steps (negative):
+	1. Open terminal
+	2. Prepare invalid GET request with invalid idList, API key and Token
+	3. Send Request
+	4. Confirm unsuccessful READ card by inspecting terminal output
+
+Expected results:
+	Terminal returns an error.
+
+Test name: UPDATE a card
+Test id: 
+	Matti 3
+Objective: 
+	Test, using terminal, that Trello API successfully updates a card and test that in 	negative cases this does not happen.
+Prerequisites: 
+	An API key and token. An existing card that can be updated. Valid Trello board.
+Test requirements: 
+	Valid API key and token. Terminal for posting requests and valid commands.
+Test steps (positive):
+	1. Open terminal
+	2. Prepare valid PUT request with valid cardID, API key and Token
+	3. Send Request
+	4. Confirm PUT card by inspecting terminal output
+
+curl --request PUT \
+--url 'https://api.trello.com/1/cards/{}?name=Korttinimi&key={}&token={}' \
+--header 'Accept: application/json'
+
+Expected results:
+	Terminal returns a json output confirms the updating of a card.
+
+Test steps (negative):
+	1. Open terminal
+	2. Prepare invalid PUT request with invalid cardID, API key and Token
+	3. Send Request
+	4. Confirm invalid PUT card by inspecting terminal output
+
+Expected results:
+	Terminal returns an error.
+
+curl --request PUT \
+--url 'https://api.trello.com/1/cards/XXXXXXXXXXX?name=Korttinimi&key={}&token={}' \
+--header 'Accept: application/json'
+
+Test name: DELETE a card
+Test id: 
+	Matti 4
+Objective: 
+	Test, using terminal, that Trello API successfully deletes a card and test that in 	negative cases this does not happen.
+Prerequisites: 
+	An API key and token. An existing card that can be deleted. Valid Trello board.
+Test requirements: 
+	Valid API key and token. Terminal for posting requests and valid commands.
+Test steps (positive):
+	1. Open terminal
+	2. Prepare valid DELETE request with valid cardID, API key and Token
+	3. Send Request
+	4. Confirm PUT card by inspecting terminal output
+
+curl --request DELETE \
+  --url 'https://api.trello.com/1/cards/{}?key={}&token={}'
+
+Expected results:
+	Terminal returns a confirmation that card was deleted.
+
+Test steps (negative):
+	1. Open terminal
+	2. Prepare invalid DELETE request with invalid cardID, API key and Token
+	3. Send Request
+	4. Confirm invalid DELETE card by inspecting terminal output
+
+curl --request DELETE \
+  --url 'https://api.trello.com/1/cards/XXXXXXXXXX?key={}&token={}'
+
+Expected results:
+	Terminal returns an error.

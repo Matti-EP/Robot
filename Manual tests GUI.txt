@@ -1,0 +1,81 @@
+Test name: CREATE a card
+Test id: 
+	Matti UI1
+Objective: 
+	Test, using browser, that Trello UI successfully creates
+	a new card and test that in negative cases this does not happen.
+	Prerequisites: A user account in Trello. Valid Trello board.
+Test requirements: 
+	A user account in Trello. Chrome browser.
+Test steps (positive):
+	1. Open Browser : https://trello.com/b/8Vkswqu0/project-management
+	2. Login : Account info
+	3. Click on a button "+Add a card
+	4. Give title "Card1"
+	5. Press "Add card"
+Expected results:
+	The card that we wanted to be created, was created
+Test steps (negative):
+	1. Open terminal
+	2. Prepare an invalid POST request with invalid idList, API key and Token
+	3. Send Request
+	4. Confirm failure of POST request from terminal
+
+Expected results:
+	Terminal returns an error. No card created.
+
+**********************************************************************************
+
+Test name: READ a card
+Test id:
+	Matti UI2
+Objective:
+	Test, using browser, that Trello UI has a card with title "Card1"
+Test requirements:
+	A user account in Trello. Chrome browser. Card1 exists
+Test steps (positive):
+	1. Open Browser : https://trello.com/b/8Vkswqu0/project-management
+	2. Login : Account info
+	3. See that "Card 1" exists
+Expected results:
+	The card with title "Card 1" exists
+Test steps (negative):
+	1. Open terminal
+	2. Prepare an invalid POST request with invalid idList, API key and Token
+	3. Send Request
+	4. Confirm failure of POST request from terminal
+
+Expected results:
+	Terminal returns an error. No card created.
+
+**********************************************************************************
+
+Test name: UPDATE a card
+Test id:
+	Matti UI3
+Objective:
+	Test, using browser, that Trello UI Updates "Card1" title to "Card2"
+Test requirements:
+	A user account in Trello. Chrome browser. Card1 exists
+Test steps (positive):
+	1. Open Browser : https://trello.com/b/8Vkswqu0/project-management
+	2. Login : Account info
+	3. Click on card1 "edit button"
+	4. Type in the new Title and confirm with Enter
+Expected results:
+	The card with title "Card 1" now has a title of "Card 2"
+
+**********************************************************************************
+
+Test name: UPDATE a card
+Test id:
+	Matti UI3
+Objective:
+	Test, using browser, that Trello UI Updates "Card1" title to "Card2"
+Test requirements:
+	A user account in Trello. Chrome browser. Card1 exists
+Test steps (positive):
+	1. Open Browser : https://trello.com/b/8Vkswqu0/project-management
+	2. Login : Account info
+	3. Click on card2 "archive" button
+	4. Confirm no card with id card2 no longer exists
